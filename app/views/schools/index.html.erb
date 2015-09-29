@@ -1,0 +1,6 @@
+<H1> Schools index </H1>
+<% school_names.each do |school| %>
+  <p>
+    <%= link_to school.school_name, school_path(school) %>
+    </p>
+<% end %>

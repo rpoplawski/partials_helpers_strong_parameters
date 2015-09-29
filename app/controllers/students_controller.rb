@@ -1,12 +1,11 @@
 class StudentsController < ApplicationController
   def index
-    students = Student.all
-    render template: 'stuents/index.html.erb', locals: { student: students }
+    student = Student.all
+    render template: 'students/index.html.erb', locals: { student_names: student }
   end
 
   def show
-    student = Student.find(params[:id])
-    render template: 'students/show.html.erb', locals: { student: student }
+    student_name = Student.find(params[:id])
+    render template: 'students/show.html.erb', locals: { student_name: student_name }
   end
-end
 end

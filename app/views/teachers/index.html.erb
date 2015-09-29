@@ -1,0 +1,6 @@
+<H1> Teachers index </H1>
+<% teacher_names.each do |teacher| %>
+  <p>
+    <%= link_to teacher.name, teacher_path(teacher) %>
+    </p>
+<% end %>
