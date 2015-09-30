@@ -1,2 +1,9 @@
-<h2> Teacher #<%= teacher.id %></h2>
-<p><%= name.name %></p>
+
+<h2> Teacher #<%= teacher_names.id %></h2>
+  <p><%= teacher_names.name %>
+  <p><%= teacher_names.student.each do |student| %>
+<% end %>
+  </p>
+
+
+
