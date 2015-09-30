@@ -19,7 +19,3 @@ end
     student_name:  Faker::Name.name,
     teacher_id: Faker::Number.between(1, 50)})
 end
-
-
-
-
