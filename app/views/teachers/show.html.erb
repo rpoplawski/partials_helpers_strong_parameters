@@ -1,9 +1,13 @@
 
 <h2> Teacher #<%= teacher_names.id %></h2>
   <p><%= teacher_names.name %>
-  <p><%= teacher_names.student.each do |student| %>
-<% end %>
-  </p>
+  <p>
+    <% teacher_names.students.each do |student| %>
+
+<%= link_to student.student_name, student_path(student) %>
+  <% end %>
+</p>
+
 
 
 
