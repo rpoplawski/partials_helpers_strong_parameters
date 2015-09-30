@@ -1,14 +1,25 @@
 
-100.times do
-  school = School.new({school_name: Faker::University.name})
+50.times do
+  School.create({
+    school_name: Faker::University.name})
 end
-100.times do
-  course = Course.new({course_name: Faker::Team.sport})
+
+50.times do
+  teacher = Teacher.create({
+    name:  Faker::Name.name,
+    school_id: Faker::Number.between(1, 50)})
+
+  course = Course.create({
+    course_name: Faker::Commerce.department,
+    school_id: Faker::Number.between(1, 50)})
 end
+
 100.times do
-  teacher = Teacher.new({name: Faker::Name.name})
+  Student.create({
+    student_name:  Faker::Name.name,
+    teacher_id: Faker::Number.between(1, 50)})
 end
-100.times do
-  student = Student.new({name: Faker::Name.name})
-end
+
+
+
 

@@ -1,4 +1,4 @@
-# encoding: UTF-8
+9# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -43,12 +43,12 @@ ActiveRecord::Schema.define(version: 20150928220524) do
 
   create_table "students", force: :cascade do |t|
     t.string   "student_name"
-    t.integer  "student_id"
+    t.integer  "teacher_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
-  add_index "students", ["student_id"], name: "index_students_on_student_id", using: :btree
+  add_index "students", ["teacher_id"], name: "index_students_on_teacher_id", using: :btree
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
@@ -62,6 +62,6 @@ ActiveRecord::Schema.define(version: 20150928220524) do
   add_foreign_key "courses", "schools"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "students"
-  add_foreign_key "students", "students"
+  add_foreign_key "students", "teachers"
   add_foreign_key "teachers", "schools"
 end
